@@ -31,7 +31,17 @@ enum class TaggedItem(
             ItemID.GRIMY_CADANTINE,
             ItemID.GRIMY_LANTADYME,
             ItemID.GRIMY_DWARF_WEED,
-            ItemID.GRIMY_TORSTOL
+            ItemID.GRIMY_TORSTOL,
+            // Jungle Potion
+            ItemID.GRIMY_SNAKE_WEED,
+            ItemID.GRIMY_ARDRIGAL,
+            ItemID.GRIMY_SITO_FOIL,
+            ItemID.GRIMY_VOLENCIA_MOSS,
+            ItemID.GRIMY_ROGUES_PURSE,
+            // Chambers of Xeric
+            ItemID.GRIMY_NOXIFER,
+            ItemID.GRIMY_GOLPAR,
+            ItemID.GRIMY_BUCHU_LEAF,
     ),
     NON_GRIMY(
             { it.showCleanHerbs() },
@@ -49,7 +59,17 @@ enum class TaggedItem(
             ItemID.CADANTINE,
             ItemID.LANTADYME,
             ItemID.DWARF_WEED,
-            ItemID.TORSTOL
+            ItemID.TORSTOL,
+            // Jungle Potion
+            ItemID.SNAKE_WEED,
+            ItemID.ARDRIGAL,
+            ItemID.SITO_FOIL,
+            ItemID.VOLENCIA_MOSS,
+            ItemID.ROGUES_PURSE,
+            // Chambers of Xeric
+            ItemID.NOXIFER,
+            ItemID.GOLPAR,
+            ItemID.BUCHU_LEAF,
     );
 
     companion object {
