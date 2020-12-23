@@ -1,0 +1,70 @@
+plugins {
+	id 'java'
+	id 'com.github.johnrengelman.shadow' version '6.1.0'
+	id 'org.jetbrains.kotlin.jvm' version "${kotlinVersion}"
+}
+
+repositories {
+	mavenLocal()
+	maven {
+		url = 'https://repo.runelite.net'
+	}
+	mavenCentral()
+}
+
+def runeLiteVersion = '1.6.30'
+
+dependencies {
+	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
+
+	compileOnly 'org.projectlombok:lombok:1.18.4'
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.slf4j:slf4j-simple:1.7.12'
+	testImplementation group: 'net.runelite', name:'client', version: runeLiteVersion, {
+		exclude group: 'ch.qos.logback', module: 'logback-classic'
+	}
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+	implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+}
+
+group = 'cc.insulin'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+/**
+ * Runs the RuneLite client with the plugin loaded.
+ */
+task testRun(type: JavaExec, dependsOn: ['testClasses'], group: "build") {
+	classpath sourceSets.test.runtimeClasspath
+	main = "cc.insulin.colourblind.ColourblindPluginTestKt"
+}
+
+compileKotlin {
+	kotlinOptions {
+		jvmTarget = "1.8"
+		freeCompilerArgs = ['-Xjvm-default=enable']
+	}
+}
+compileTestKotlin {
+	kotlinOptions {
+		jvmTarget = "1.8"
+		freeCompilerArgs = ['-Xjvm-default=enable']
+	}
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'cc.insulin.colourblind.ColourblindPlugin'
+	}
+}
+
+shadowJar {
+	archiveBaseName.set('colourblind-helper')
+	archiveClassifier.set('full')
+}
