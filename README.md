@@ -1,6 +1,12 @@
 # Colorblind Helper
 A RuneLite plugin which primarily aims to improve accessibility for colorblind individuals.
 
+Currently, this plugin does two things:
+- Draws `G` or `C` (customizable in the config) on grimy and clean herbs in your inventory
+- When your character has the poison/venom/disease status effect, the heart in the HP minimap orb is replaced with a skull
+
+Both of these can be disabled in the config if you find it unnecessary or intrusive.
+
 ## Running
 You can run a RuneLite instance with the plugin installed by running `./gradlew testRun`. This will not install it to your main RuneLite instance unfortunately.
 
