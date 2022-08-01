@@ -1,4 +1,4 @@
-package cc.insulin.colourblind
+package cc.insulin.colorblind
 
 import com.google.inject.Inject
 import net.runelite.api.widgets.WidgetID
@@ -11,8 +11,8 @@ import java.awt.Graphics2D
 import java.awt.Point
 import java.awt.Rectangle
 
-class ColourblindItemOverlay @Inject constructor(
-        private val config: ColourblindConfig,
+class ColorblindItemOverlay @Inject constructor(
+        private val config: ColorblindConfig,
         private val itemManager: ItemManager
 ) : WidgetItemOverlay() {
 
@@ -36,7 +36,7 @@ class ColourblindItemOverlay @Inject constructor(
     private fun renderText(graphics: Graphics2D, bounds: Rectangle, item: TaggedItem) {
         val textComponent = TextComponent()
         textComponent.setPosition(Point(bounds.x - 1, bounds.y + bounds.height - 1))
-        textComponent.setColor(config.textColour())
+        textComponent.setColor(config.textColor())
         textComponent.setText(item.tagText(config))
         textComponent.render(graphics)
     }

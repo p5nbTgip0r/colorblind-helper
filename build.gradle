@@ -42,7 +42,7 @@ tasks.withType(JavaCompile) {
  */
 task testRun(type: JavaExec, dependsOn: ['testClasses'], group: "build") {
 	classpath sourceSets.test.runtimeClasspath
-	main = "cc.insulin.colourblind.ColourblindPluginTestKt"
+	main = "cc.insulin.colorblind.ColorblindPluginTestKt"
 }
 
 compileKotlin {
@@ -60,11 +60,11 @@ compileTestKotlin {
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'cc.insulin.colourblind.ColourblindPlugin'
+		attributes 'Main-Class': 'cc.insulin.colorblind.ColorblindPlugin'
 	}
 }
 
 shadowJar {
-	archiveBaseName.set('colourblind-helper')
+	archiveBaseName.set('colorblind-helper')
 	archiveClassifier.set('full')
 }

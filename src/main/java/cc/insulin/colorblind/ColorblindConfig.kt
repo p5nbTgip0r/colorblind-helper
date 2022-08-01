@@ -1,4 +1,4 @@
-package cc.insulin.colourblind
+package cc.insulin.colorblind
 
 import net.runelite.client.config.Config
 import net.runelite.client.config.ConfigGroup
@@ -6,8 +6,8 @@ import net.runelite.client.config.ConfigItem
 import net.runelite.client.config.ConfigSection
 import java.awt.Color
 
-@ConfigGroup("colourblind-helper")
-interface ColourblindConfig : Config {
+@ConfigGroup("colorblind-helper")
+interface ColorblindConfig : Config {
     companion object {
         @ConfigSection(
                 name = "Items",
@@ -19,12 +19,12 @@ interface ColourblindConfig : Config {
 
     @JvmDefault
     @ConfigItem(
-            keyName = "textColour",
-            name = "Colour",
+            keyName = "textColor",
+            name = "Color",
             position = -2,
-            description = "The colour of the tag"
+            description = "The color of the tag"
     )
-    fun textColour(): Color = Color.WHITE
+    fun textColor(): Color = Color.WHITE
 
     @JvmDefault
     @ConfigItem(

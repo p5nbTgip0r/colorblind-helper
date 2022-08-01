@@ -1,11 +1,11 @@
-# Colourblind Helper
-A RuneLite plugin which primarily aims to improve accessibility for colourblind individuals.
+# Colorblind Helper
+A RuneLite plugin which primarily aims to improve accessibility for colorblind individuals.
 
 ## Running
 You can run a RuneLite instance with the plugin installed by running `./gradlew testRun`. This will not install it to your main RuneLite instance unfortunately.
 
 ## Building
-Because this plugin utilises Kotlin instead of Java, it is incompatible with the original RuneLite client out of the box. You will need to either use a custom RuneLite-based client (like [OpenOSRS](https://github.com/open-osrs/runelite)) that has the Kotlin stdlib and reflection library included, or compile the plugin with Kotlin dependencies shaded into it.
+Because this plugin utilizes Kotlin instead of Java, it is incompatible with the original RuneLite client out of the box. You will need to either use a custom RuneLite-based client (like [OpenOSRS](https://github.com/open-osrs/runelite)) that has the Kotlin stdlib and reflection library included, or compile the plugin with Kotlin dependencies shaded into it.
 
 ### Compiling w/ Kotlin dependencies
 If you are going to use this with the original RuneLite, you'll want to follow this.

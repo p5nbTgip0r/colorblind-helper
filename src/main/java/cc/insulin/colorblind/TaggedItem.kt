@@ -1,18 +1,18 @@
-package cc.insulin.colourblind
+package cc.insulin.colorblind
 
 import net.runelite.api.ItemID
 
 /**
  * Enum for groups of tagged item IDs
  *
- * @property shouldTag A function which takes in a [ColourblindConfig] instance and returns whether this group of
+ * @property shouldTag A function which takes in a [ColorblindConfig] instance and returns whether this group of
  * items should be displayed as tagged
- * @property tagText A function which takes in a [ColourblindConfig] instance and returns the tag name of these items
+ * @property tagText A function which takes in a [ColorblindConfig] instance and returns the tag name of these items
  * @property itemIds An array of the item IDs which should be tagged
  */
 enum class TaggedItem(
-        val shouldTag: (config: ColourblindConfig) -> Boolean,
-        var tagText: (config: ColourblindConfig) -> String,
+        val shouldTag: (config: ColorblindConfig) -> Boolean,
+        var tagText: (config: ColorblindConfig) -> String,
         vararg var itemIds: Int
 ) {
     GRIMY(

@@ -1,4 +1,4 @@
-package cc.insulin.colourblind
+package cc.insulin.colorblind
 
 import com.google.inject.Provides
 import net.runelite.api.Client
@@ -19,18 +19,18 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import javax.inject.Inject
 
-@PluginDescriptor(name = "Colourblind Helper")
-class ColourblindPlugin : Plugin() {
+@PluginDescriptor(name = "Colorblind Helper")
+class ColorblindPlugin : Plugin() {
     private val log = logger()
 
     @Inject
-    lateinit var config: ColourblindConfig
+    lateinit var config: ColorblindConfig
 
     @Inject
     lateinit var overlayManager: OverlayManager
 
     @Inject
-    lateinit var overlay: ColourblindItemOverlay
+    lateinit var overlay: ColorblindItemOverlay
 
     @Inject
     lateinit var client: Client
@@ -53,7 +53,7 @@ class ColourblindPlugin : Plugin() {
 
     @Subscribe
     fun onConfigChanged(event: ConfigChanged) {
-        if (event.group != "colourblind-helper") return
+        if (event.group != "colorblind-helper") return
 
         if (event.key == "skullPoison") {
             checkAndSetIcons()
@@ -61,8 +61,8 @@ class ColourblindPlugin : Plugin() {
     }
 
     @Provides
-    fun provideConfig(configManager: ConfigManager): ColourblindConfig {
-        return configManager.getConfig(ColourblindConfig::class.java)
+    fun provideConfig(configManager: ConfigManager): ColorblindConfig {
+        return configManager.getConfig(ColorblindConfig::class.java)
     }
 
     @Subscribe
